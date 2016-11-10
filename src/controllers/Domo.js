@@ -1,4 +1,5 @@
 const models = require('../models');
+const mongoose = require('mongoose');
 
 const Domo = models.Domo;
 
@@ -37,12 +38,19 @@ const makeDomo = (req, res) => {
   });
 };
 
-// const removeDomo = (req, res) => {
-//  console.dir(req);
-// //  DomoModel.find({name: req.body.name, owner: req.session.account._id,}).remove().exec();
-//  return res.json({ redirect: '/maker' });
-// }
+const removeDomo = (req, res) => {
+  const convertId = mongoose.Types.ObjectId;
+  Domo.DomoModel.find({
+    name: req.body.name,
+    owner: convertId(req.session.account._id) }).remove().exec((err) => {
+      if (err) {
+        console.log(err);
+        return res.status(400).json({ error: 'An error occured' });
+      }
+      return res.json({ redirect: '/maker' });
+    });
+};
 
 module.exports.makerPage = makerPage;
 module.exports.make = makeDomo;
-// module.exports.removeDomo = removeDomo;
+module.exports.removeDomo = removeDomo;

@@ -2,10 +2,6 @@ const models = require('../models');
 
 const Account = models.Account;
 
-const extraPage = (req, res) => {
-  res.render('extra');
-};
-
 const loginPage = (req, res) => {
   res.render('login', { csrfToken: req.csrfToken() });
 };
@@ -80,4 +76,3 @@ module.exports.login = login;
 module.exports.logout = logout;
 module.exports.signupPage = signupPage;
 module.exports.signup = signup;
-module.exports.extraPage = extraPage;
