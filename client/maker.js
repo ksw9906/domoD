@@ -40,26 +40,26 @@ $(document).ready(function() {
         return false;
     });
   
-    $("body").on("click", (e) =>{
-      var target = $(e.target);
-//      console.log(target);
-      if(target[0].className === "deleteButton"){
-        var data = {name: target[0].name};
-        $.ajax({
-            cache: false,
-            type: "POST",
-            url: "/remove",
-            data: data,
-            dataType: "json",
-            success: (result, status, xhr) => {
-                console.log("success");
-            },
-            error: (xhr, status, error) => {
-              console.log("error");
-              console.log(error);
-            }
-        });        
-//        console.log('deletebutton');
-      }
-    });
+//    $("body").on("click", (e) =>{
+//      var target = $(e.target);
+////      console.log(target);
+//      if(target[0].className === "deleteButton"){
+//        var data = {name: target[0].name};
+//        $.ajax({
+//            cache: false,
+//            type: "POST",
+//            url: "/remove",
+//            data: data,
+//            dataType: "json",
+//            success: (result, status, xhr) => {
+//                console.log("success");
+//            },
+//            error: (xhr, status, error) => {
+//              console.log("error");
+//              console.log(error);
+//            }
+//        });        
+////        console.log('deletebutton');
+//      }
+//    });
 });

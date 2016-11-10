@@ -9,6 +9,7 @@
 <body>
   <nav><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
     <div class="navlink"><a href="/logout">Log out</a></div>
+    <div class="navlink"><a href="/extra">Extra Feature Page</a></div>
   </nav>
   <section id="makeDomo">
     <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
@@ -29,7 +30,7 @@
             <h3 class="domoName">Name: {{this.name}}</h3>
             <h3 class="domoAge">Age: {{this.age}}</h3>
             <h3 class="domoWeapon">Weapon: {{this.weapon}}</h3>
-            <button class="deleteButton" type="button" name={{this.name}}>Delete</button>
+<!--            <button class="deleteButton" type="button" name={{this.name}}>Delete</button>-->
           </div>
         {{/each}}
       {{else}}

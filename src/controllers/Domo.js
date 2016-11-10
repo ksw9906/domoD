@@ -37,12 +37,12 @@ const makeDomo = (req, res) => {
   });
 };
 
-const removeDomo = (req, res) => {
-  console.dir(req);
-//  DomoModel.find({name: req.body.name, owner: req.session.account._id,}).remove().exec();
-  return res.json({ redirect: '/maker' });
-}
+// const removeDomo = (req, res) => {
+//  console.dir(req);
+// //  DomoModel.find({name: req.body.name, owner: req.session.account._id,}).remove().exec();
+//  return res.json({ redirect: '/maker' });
+// }
 
 module.exports.makerPage = makerPage;
 module.exports.make = makeDomo;
-module.exports.removeDomo = removeDomo;
+// module.exports.removeDomo = removeDomo;
